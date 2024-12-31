@@ -8,10 +8,6 @@ let messageBuffer: MessageType[] = [];
 let timeoutId: any = null;
 
 export const broadcastMessages = (wss: any, messages: MessageType[]) => {
-  if (!Array.isArray(messages)) {
-    messages = [messages];
-  }
-
   wss.clients.forEach((client: any) => {
     if (client.readyState === WebSocket.OPEN) {
       messages.forEach((message) => {
