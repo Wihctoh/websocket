@@ -1,4 +1,4 @@
-import { Title, Flex } from "@mantine/core";
+import { Title, Flex, Center } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 
 import { getAllMessages } from "./api/api";
@@ -14,9 +14,9 @@ function App() {
 
   if (isPending) {
     return (
-      <Flex p='xl' w='100%' h='100vh' gap='10' direction='column' justify='flex-end' align='center'>
+      <Center h='100vh'>
         <Title order={1}>Loading...</Title>
-      </Flex>
+      </Center>
     );
   }
 
